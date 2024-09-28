@@ -8,7 +8,7 @@ RUN apk add --no-cache python3
 RUN mkdir -p /var/www
 
 # Create a simple HTML page with background color #ff5733 and "Hello, World 1"
-RUN echo '<!DOCTYPE html><html><head><style>body { background-color: #ff5733; color: white; font-size: 24px; }</style></head><body>Hello, World 1</body></html>' > /var/www/index.html
+RUN echo '<!DOCTYPE html><html><head><style>body { background-color: #ff3333; color: white; font-size: 24px; }</style></head><body>Hello, World 3</body></html>' > /var/www/index.html
 
 
 # Expose port 4242 for the web server
