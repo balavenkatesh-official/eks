@@ -12,18 +12,18 @@ pipeline {
                 }
             }
         }
-        stage('Build Docker Image') {
-            steps {
-                // Build your Docker image
-                sh 'docker build -t balavenkateshhub/hello-world:v3 .'
-            }
-        }
-        stage('Push Docker Image') {
-            steps {
-                // Push your Docker image to Docker Hub
-                sh 'docker push balavenkateshhub/hello-world:v3'
-            }    
-        }
+        // stage('Build Docker Image') {
+        //     steps {
+        //         // Build your Docker image
+        //         sh 'docker build -t balavenkateshhub/hello-world:v3 .'
+        //     }
+        // }
+        // stage('Push Docker Image') {
+        //     steps {
+        //         // Push your Docker image to Docker Hub
+        //         sh 'docker push balavenkateshhub/hello-world:v3'
+        //     }    
+        // }
         stage('change the image version on kube-config') {
             steps {
                 // Push your Docker image to Docker Hub
