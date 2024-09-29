@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+    name: frontend-app3
+    labels:
+        app: frontend-app3
+spec:
+    replicas: 1
+    selector:
+        matchLabels:
+            app: frontend-app3
+    template:
+        metadata:
+            labels:
+                app: frontend-app3
+        spec:        
+            containers:
+                - name: fronend-app3
+                  image: balavenkateshhub/hello-world:v3
+                  ports:
+                    - name: frontend-3-port
+                      containerPort: 4242
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+    name: frontend-service-3
+    labels:
+        app: fronend-service-3
+spec:                      
+    type: ClusterIP
+    selector:
+        app: frontend-app3
+    ports:
+        - name: frontend-3-port
+          port: 80
+          targetPort: 4242
+               
