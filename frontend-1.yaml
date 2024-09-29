@@ -16,7 +16,7 @@ spec:
         spec:                
             containers:
                 - name: frontend-app
-                  image: balavenkateshhub/hello-world:v1
+                  image: balavenkateshhub/hello-world:v4
                   ports:
                     - name: container-port
                       containerPort: 4242
