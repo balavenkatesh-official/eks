@@ -22,8 +22,20 @@ pipeline {
             steps {
                 // Push your Docker image to Docker Hub
                 sh 'docker push balavenkateshhub/hello-world:v3'
-            }
+            }    
         }
+        stage('change the image version on kube-config') {
+            steps {
+                // Push your Docker image to Docker Hub
+                sh 'sed -i 's/balavenkateshhub\/hello-world:v4/balavenkateshhub\/hello-world:v1/g' frontend-1.yaml'
+            }    
+        }
+        stage('apply the changed image version on kube-config') {
+            steps {
+                // Push your Docker image to Docker Hub
+                sh 'kubectl apply -f .'
+            }    
+        }        
     }
 }
 
