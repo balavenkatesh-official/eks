@@ -13,7 +13,7 @@ spec:
         metadata:
             labels:
                 app: frontend-app
-        spec:                
+        spec:
             containers:
                 - name: frontend-app
                   image: balavenkateshhub/hello-world:v4
@@ -29,11 +29,11 @@ metadata:
     labels:
         app: frontend-service
 spec:
-    type: ClusterIP
+    type: NodePort
     selector:
         app: frontend-app
     ports:
         - name: frontend-service-port
           port: 80
-          targetPort: 4242    
-    
+          targetPort: 4242
+          nodePort: 4242
